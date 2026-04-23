@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Comment;
+use App\Form\CommentType;
 use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,8 @@ final class CommentController extends AbstractController
     public function index(CommentRepository $commentRepository): Response
     {
         return $this->render('comment/index.html.twig', [
-            'comments' => $commentRepository->findAll(),
+            'comments'  => $commentRepository->findAll(),
+            'form'      => $this->createForm(CommentType::class, new Comment()),
         ]);
     }
 

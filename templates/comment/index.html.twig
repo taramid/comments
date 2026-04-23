@@ -11,6 +11,11 @@
 <div class="example-wrapper">
     <h1>Comments</h1>
 
+    <h2>додати</h2>
+    {{ form(form) }}
+
+    <hr>
+
     {% for comment in comments %}
         <h4>{{ comment }}</h4>
     {% endfor %}
