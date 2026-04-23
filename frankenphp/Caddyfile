@@ -1,12 +1,4 @@
 {
-    # This instructs Caddy to trust X-Forwarded-* headers from any private IP space.
-    # Because Cloudflare's tunnel operates locally to your container, this is safe and effective.
-    servers {
-        trusted_proxies private_ranges
-    }
-}
-
-{
 	skip_install_trust
 
 	{$CADDY_GLOBAL_OPTIONS}
