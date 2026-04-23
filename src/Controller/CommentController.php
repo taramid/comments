@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,11 +10,19 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class CommentController extends AbstractController
 {
-    #[Route('/comment', name: 'app_comment')]
+    #[Route('/comment', name: 'comment')]
     public function index(CommentRepository $commentRepository): Response
     {
         return $this->render('comment/index.html.twig', [
             'comments' => $commentRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/comment/{id}', name: 'comment_show')]
+    public function show(Comment $comment): Response
+    {
+        return $this->render('comment/show.html.twig', [
+            'comment' => $comment,
         ]);
     }
 }
