@@ -10,6 +10,13 @@
 
 {$CADDY_EXTRA_CONFIG}
 
+{
+    # This enables the global option to trust Cloudflare
+    servers {
+        trusted_proxies cloudflare
+    }
+}
+
 {$SERVER_NAME:localhost} {
 	log {
 		{$CADDY_SERVER_LOG_OPTIONS}
