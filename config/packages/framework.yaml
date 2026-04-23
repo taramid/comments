@@ -17,6 +17,7 @@ framework:
     http_client:
         scoped_clients:
             my_insecure_client:
+                base_uri: 'http://localhost'
                 verify_peer: false
                 verify_host: false
 
