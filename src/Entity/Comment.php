@@ -15,9 +15,11 @@ class Comment
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[\Symfony\Component\Validator\Constraints\NotBlank]
     private ?string $who = null;
 
     #[ORM\Column(length: 255)]
+    #[\Symfony\Component\Validator\Constraints\NotBlank]
     private ?string $text = null;
 
     #[ORM\Column]
