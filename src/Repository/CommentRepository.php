@@ -16,6 +16,14 @@ class CommentRepository extends ServiceEntityRepository
         parent::__construct($registry, Comment::class);
     }
 
+    public function findAllOrderedByNewest(): array
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.created_at', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Comment[] Returns an array of Comment objects
 //     */

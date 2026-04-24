@@ -33,7 +33,7 @@ final class CommentController extends AbstractController
         }
 
         return $this->render('comment/index.html.twig', [
-            'comments'  => $commentRepository->findAll(),
+            'comments'  => $commentRepository->findAllOrderedByNewest(),
             'form'      => $this->createForm(CommentType::class, new Comment()),
         ]);
     }
