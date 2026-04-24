@@ -13,3 +13,4 @@ services:
 
       # as we use cloudflare tunnel
       SERVER_NAME: ":80"
+      CADDY_GLOBAL_OPTIONS: "auto_https off"
