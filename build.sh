@@ -15,4 +15,5 @@
 #
 # тому поки будемо створювати образ на linux-сервері
 
+
 docker compose -f compose.yaml -f compose.prod.yaml build --pull --no-cache
